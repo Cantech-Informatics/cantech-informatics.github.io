@@ -1,1 +1,112 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantech Informatics</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: white;
+            color: #333;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: normal;
+        }
+        h1 span {
+            color: #d90429;
+            font-weight: bold;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .tagline {
+            text-align: center;
+            max-width: 600px;
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #eee;
+            font-size: 0.7em; /* Slightly smaller font for footer details */
+            color: #777;
+            line-height: 1.4; /* Improve line spacing for multiple lines */
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d90429;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-button:hover {
+            background-color: #b3031f;
+        }
+
+        .footer-details {
+          display: flex;
+          flex-direction: column; /* Stack details vertically */
+          align-items: center; /* Center items horizontally */
+        }
+        .footer-details p {
+            margin: 2px 0; /* Reduce margin between lines */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cantech <span>Informatics</span></h1>
+    </header>
+
+    <main>
+        <div class="tagline">
+            <p>Strategic Software Solutions for a Complex World.</p>
+            <a href="mailto:iain@cantech-informatics.com" class="contact-button">Get in Touch</a>
+        </div>
+    </main>
+
+    <footer>
+      <div class="footer-details">
+          <p>&copy; 2023 Cantech Informatics SRL. All rights reserved.</p>
+          <p>Company Name: CANTECH INFORMATICS SRL</p>
+          <p>Fiscal Code: 17141829 | Registry No.: J2005001082406</p>
+          <p>EUID: ROONRC.J2005001082406 | Established: 2005</p>
+      </div>
+    </footer>
+
+</body>
+</html>
