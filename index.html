@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cantech Informatics</title>
     <style>
+        /* General Styles */
         body {
             font-family: sans-serif;
             margin: 0;
@@ -43,7 +44,8 @@
 
         .tagline {
             text-align: center;
-            max-width: 600px;
+            max-width: 600px;  /* Limit width on larger screens */
+            width: 90%; /* Use percentage for responsiveness */
             font-size: 1.2em;
             line-height: 1.5;
             color: #555;
@@ -54,9 +56,9 @@
             padding: 10px;
             background-color: white;
             border-top: 1px solid #eee;
-            font-size: 0.7em; /* Slightly smaller font for footer details */
+            font-size: 0.7em;
             color: #777;
-            line-height: 1.4; /* Improve line spacing for multiple lines */
+            line-height: 1.4;
         }
 
         .contact-button {
@@ -70,20 +72,85 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
         }
         .contact-button:hover {
             background-color: #b3031f;
         }
 
         .footer-details {
-          display: flex;
-          flex-direction: column; /* Stack details vertically */
-          align-items: center; /* Center items horizontally */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .footer-details p {
-            margin: 2px 0; /* Reduce margin between lines */
+            margin: 2px 0;
         }
 
+        /* Morphing Text Styles */
+        #morphing-text {
+            width: 100%;  /* Responsive width */
+            max-width: 800px; /* Max width on large screens */
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .text-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em; /* Responsive font size, start with a base */
+            font-weight: bold;
+            opacity: 0;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            transform: translateX(100%);
+            box-sizing: border-box;  /* Include padding/border in width/height */
+        }
+        
+        .text-layer.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .text-layer.previous {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+
+        /* Media Queries */
+
+        /* Small screens (phones) */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Smaller font size for phones */
+            }
+            .tagline {
+                font-size: 1em; /* Smaller tagline font size */
+            }
+             .text-layer {
+                font-size: 1.2em; /* Adjust font size for smaller screens */
+            }
+        }
+
+        /* Medium screens (tablets) */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .text-layer {
+                font-size: 1.5em; /* Adjust font size for medium screens */
+            }
+        }
+
+
+        /* Larger screens (desktops) - No specific changes, use the base styles */
+        @media (min-width: 1025px) {
+          /* No Styles, just takes the base styles */
+        }
     </style>
 </head>
 <body>
@@ -94,19 +161,96 @@
 
     <main>
         <div class="tagline">
+            <div id="morphing-text"></div>
             <p>Strategic Software Solutions for a Complex World.</p>
             <a href="mailto:iain@cantech-informatics.com" class="contact-button">Get in Touch</a>
         </div>
     </main>
 
     <footer>
-      <div class="footer-details">
-          <p>&copy; 2023 Cantech Informatics SRL. All rights reserved.</p>
-          <p>Company Name: CANTECH INFORMATICS SRL</p>
-          <p>Fiscal Code: 17141829 | Registry No.: J2005001082406</p>
-          <p>EUID: ROONRC.J2005001082406 | Established: 2005</p>
-      </div>
+        <div class="footer-details">
+            <p>&copy; 2023 Cantech Informatics SRL. All rights reserved.</p>
+            <p>Company Name: CANTECH INFORMATICS SRL</p>
+            <p>Fiscal Code: 17141829 | Registry No.: J2005001082406</p>
+            <p>EUID: ROONRC.J2005001082406 | Established: 2005</p>
+        </div>
     </footer>
 
+    <script>
+        let keywords = [
+            "Compiler Engineering",
+            "Neural Network Accelerators",
+            "Architectural & Performance Modeling",
+            "CHERI (Capability Hardware Enhanced RISC Instructions)",
+            "Embedded Systems",
+            "Cybersecurity",
+            "High-Performance Computing",
+            "Mobile App Development",
+            "Web Solutions",
+        ];
+        
+        const morphingTextDiv = document.getElementById('morphing-text');
+        let currentKeywordIndex = 0;
+        let layers = [];
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+           
+        function createLayers() {
+            shuffleArray(keywords).forEach((keyword, index) => {
+                const textLayer = document.createElement('div');
+                textLayer.classList.add('text-layer');
+                textLayer.textContent = keyword;
+                  if (index === 0) {
+                    textLayer.classList.add('active');
+                  }
+                morphingTextDiv.appendChild(textLayer);
+                layers.push(textLayer);
+            });
+        }
+        
+        function morphText() {
+            const currentLayer = layers[currentKeywordIndex];
+            const nextKeywordIndex = (currentKeywordIndex + 1) % keywords.length;
+            const nextLayer = layers[nextKeywordIndex];
+        
+            // Add 'previous' class to the current layer *before* removing 'active'
+            if (currentLayer) {
+                currentLayer.classList.add('previous');
+            }
+        
+            // Remove the 'active' class from the current layer.
+            currentLayer.classList.remove('active');
+        
+        
+            //Make next layer active
+            nextLayer.classList.add('active');
+        
+            // Remove the 'previous' class from the *new* current layer after a delay
+            // This delay should match the transition duration in CSS.
+            setTimeout(() => {
+                if(currentLayer) { // Check if currentLayer is not null
+                    currentLayer.classList.remove('previous');
+                }
+        
+            }, 800); // 800ms matches the 0.8s transition in the CSS
+        
+            currentKeywordIndex = nextKeywordIndex;
+        }
+        
+        
+        createLayers(); // Create the initial text layers
+        morphText();    //Show the First Text
+        setInterval(morphText, 3000); // Change text every 3 seconds (3000 milliseconds)
+        
+        
+    </script>
 </body>
 </html>
