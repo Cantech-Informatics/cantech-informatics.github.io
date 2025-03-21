@@ -49,18 +49,17 @@
             font-size: 1.2em;
             line-height: 1.5;
             color: #555;
-            /* Flexbox for tagline content */
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
+            align-items: center;
         }
 
         .tagline-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex:1; /* Allows the div to grow and fill the space */
-            justify-content: center; /*Center the morphing text Vertically*/
+            flex: 1;
+            justify-content: center;
         }
 
         footer {
@@ -80,7 +79,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px; /* Space above the button */
+            margin-top: 20px;
             font-weight: bold;
             border: none;
             cursor: pointer;
@@ -97,6 +96,27 @@
         }
         .footer-details p {
             margin: 2px 0;
+        }
+
+        /* LinkedIn Link Styles */
+        .linkedin-link {
+            display: inline-block; /* Important for consistent styling */
+            margin-top: 10px; /* Space between company info and LinkedIn link */
+            color: #0077b5; /* LinkedIn blue */
+            text-decoration: none; /* Remove default underline */
+            font-size: 0.8em;
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        .linkedin-link:hover {
+            color: #005180; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+        .linkedin-link img {
+            width: 16px; /* Adjust as needed */
+            height: 16px;
+            margin-right: 5px; /* Space between icon and text */
+            vertical-align: middle; /* Align icon with text */
         }
 
         /* Morphing Text Styles */
@@ -137,8 +157,6 @@
 
 
         /* Media Queries */
-
-        /* Small screens (phones) */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em;
@@ -151,17 +169,10 @@
             }
         }
 
-        /* Medium screens (tablets) */
         @media (min-width: 601px) and (max-width: 1024px) {
             .text-layer {
                 font-size: 1.5em;
             }
-        }
-
-
-        /* Larger screens (desktops) */
-        @media (min-width: 1025px) {
-          /* No Styles, just takes the base styles */
         }
     </style>
 </head>
@@ -187,6 +198,10 @@
             <p>Company Name: CANTECH INFORMATICS SRL</p>
             <p>Fiscal Code: 17141829 | Registry No.: J2005001082406</p>
             <p>EUID: ROONRC.J2005001082406 | Established: 2005</p>
+             <a href="https://www.linkedin.com/company/cantech-informatics/" class="linkedin-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
+                Follow us on LinkedIn
+             </a>
         </div>
     </footer>
 
