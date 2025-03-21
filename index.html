@@ -44,11 +44,23 @@
 
         .tagline {
             text-align: center;
-            max-width: 600px;  /* Limit width on larger screens */
-            width: 90%; /* Use percentage for responsiveness */
+            max-width: 600px;
+            width: 90%;
             font-size: 1.2em;
             line-height: 1.5;
             color: #555;
+            /* Flexbox for tagline content */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        .tagline-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex:1; /* Allows the div to grow and fill the space */
+            justify-content: center; /*Center the morphing text Vertically*/
         }
 
         footer {
@@ -68,11 +80,11 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 20px; /* Space above the button */
             font-weight: bold;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            transition: background-color 0.3s ease;
         }
         .contact-button:hover {
             background-color: #b3031f;
@@ -89,13 +101,13 @@
 
         /* Morphing Text Styles */
         #morphing-text {
-            width: 100%;  /* Responsive width */
-            max-width: 800px; /* Max width on large screens */
-            height: 150px;
+            width: 100%;
+            max-width: 800px;
+            height: 100px;
             position: relative;
             overflow: hidden;
         }
-        
+
         .text-layer {
             position: absolute;
             top: 0;
@@ -105,19 +117,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.8em; /* Responsive font size, start with a base */
+            font-size: 1.8em;
             font-weight: bold;
             opacity: 0;
             transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
             transform: translateX(100%);
-            box-sizing: border-box;  /* Include padding/border in width/height */
+            box-sizing: border-box;
         }
-        
+
         .text-layer.active {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .text-layer.previous {
             transform: translateX(-100%);
             opacity: 0;
@@ -129,25 +141,25 @@
         /* Small screens (phones) */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Smaller font size for phones */
+                font-size: 2em;
             }
             .tagline {
-                font-size: 1em; /* Smaller tagline font size */
+                font-size: 1em;
             }
              .text-layer {
-                font-size: 1.2em; /* Adjust font size for smaller screens */
+                font-size: 1.2em;
             }
         }
 
         /* Medium screens (tablets) */
         @media (min-width: 601px) and (max-width: 1024px) {
             .text-layer {
-                font-size: 1.5em; /* Adjust font size for medium screens */
+                font-size: 1.5em;
             }
         }
 
 
-        /* Larger screens (desktops) - No specific changes, use the base styles */
+        /* Larger screens (desktops) */
         @media (min-width: 1025px) {
           /* No Styles, just takes the base styles */
         }
@@ -161,8 +173,10 @@
 
     <main>
         <div class="tagline">
-            <div id="morphing-text"></div>
-            <p>Strategic Software Solutions for a Complex World.</p>
+             <div class="tagline-content">
+                <div id="morphing-text"></div>
+                <p>Strategic Software Solutions for a Complex World.</p>
+            </div>
             <a href="mailto:iain@cantech-informatics.com" class="contact-button">Get in Touch</a>
         </div>
     </main>
@@ -188,7 +202,7 @@
             "Mobile App Development",
             "Web Solutions",
         ];
-        
+
         const morphingTextDiv = document.getElementById('morphing-text');
         let currentKeywordIndex = 0;
         let layers = [];
@@ -202,7 +216,7 @@
             }
             return array;
         }
-           
+
         function createLayers() {
             shuffleArray(keywords).forEach((keyword, index) => {
                 const textLayer = document.createElement('div');
@@ -215,42 +229,34 @@
                 layers.push(textLayer);
             });
         }
-        
+
         function morphText() {
             const currentLayer = layers[currentKeywordIndex];
             const nextKeywordIndex = (currentKeywordIndex + 1) % keywords.length;
             const nextLayer = layers[nextKeywordIndex];
-        
-            // Add 'previous' class to the current layer *before* removing 'active'
+
             if (currentLayer) {
                 currentLayer.classList.add('previous');
             }
-        
-            // Remove the 'active' class from the current layer.
             currentLayer.classList.remove('active');
-        
-        
-            //Make next layer active
             nextLayer.classList.add('active');
-        
-            // Remove the 'previous' class from the *new* current layer after a delay
-            // This delay should match the transition duration in CSS.
+
             setTimeout(() => {
-                if(currentLayer) { // Check if currentLayer is not null
+                if(currentLayer) {
                     currentLayer.classList.remove('previous');
                 }
-        
-            }, 800); // 800ms matches the 0.8s transition in the CSS
-        
+
+            }, 800);
+
             currentKeywordIndex = nextKeywordIndex;
         }
-        
-        
-        createLayers(); // Create the initial text layers
-        morphText();    //Show the First Text
-        setInterval(morphText, 3000); // Change text every 3 seconds (3000 milliseconds)
-        
-        
+
+
+        createLayers();
+        morphText();
+        setInterval(morphText, 3000);
+
+
     </script>
 </body>
 </html>
