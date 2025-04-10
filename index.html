@@ -3,182 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cantech Informatics</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: white;
-            color: #333;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            background-color: white;
-            border-bottom: 1px solid #eee;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: normal;
-        }
-        h1 span {
-            color: #d90429;
-            font-weight: bold;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            padding: 20px;
-        }
-
-        .tagline {
-            text-align: center;
-            font-size: 1.2em;
-            line-height: 1.5;
-            color: #555;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tagline-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            justify-content: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: white;
-            border-top: 1px solid #eee;
-            font-size: 0.7em;
-            color: #777;
-            line-height: 1.4;
-        }
-
-        .contact-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #d90429;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .contact-button:hover {
-            background-color: #b3031f;
-        }
-
-        .footer-details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .footer-details p {
-            margin: 2px 0;
-        }
-
-        /* LinkedIn Link Styles */
-        .linkedin-link {
-            display: inline-block; /* Important for consistent styling */
-            margin-top: 10px; /* Space between company info and LinkedIn link */
-            color: #0077b5; /* LinkedIn blue */
-            text-decoration: none; /* Remove default underline */
-            font-size: 0.8em;
-            transition: color 0.3s ease; /* Smooth color transition on hover */
-        }
-
-        .linkedin-link:hover {
-            color: #005180; /* Darker blue on hover */
-            text-decoration: underline;
-        }
-        .linkedin-link img {
-            width: 16px; /* Adjust as needed */
-            height: 16px;
-            margin-right: 5px; /* Space between icon and text */
-            vertical-align: middle; /* Align icon with text */
-        }
-
-        /* Morphing Text Styles */
-        #morphing-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            justify-content: center;
-            max-height: 20vh;
-        }
-
-        .text-layer {
-            font-size: 1.8em;
-            font-weight: bold;
-            display: none;
-        }
-
-        .text-layer.active {
-            opacity: 1;
-            transform: translateX(0);
-            display: block;
-        }
-
-        .text-layer.previous {
-            transform: translateX(-100%);
-            opacity: 0.2;
-        }
-
-        .logo {
-            display: flex;
-            justify-content: left;
-        }
-
-        .logo img {
-            width: 180px; /* Adjust the size as needed */
-            height: auto; /* Maintain aspect ratio */
-            margin-left: 20px;
-        }
-
-
-        /* Media Queries */
-        @media (max-width: 600px) {
-            .logo {
-                justify-content: center;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-            .tagline {
-                font-size: 1em;
-            }
-             .text-layer {
-                font-size: 1.2em;
-            }
-        }
-
-        @media (min-width: 601px) and (max-width: 1024px) {
-            .text-layer {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    <title>Cantech Informatics &ndash; Strategic Software Solutions</title>
+    <meta name="description" content="Cantech Informatics - Strategic Software Solutions for a Complex World.">
+    <meta name="keywords" content="Cantech Informatics, Cantech Informatics SRL, CHERI Romania, compiler engineering, performance modeling">
+    <meta name="author" content="Cantech Informatics">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="ca_leaf.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -186,6 +17,16 @@
         <div class="logo">
             <img src="/cantech_informatics_logo.png" alt="Cantech Informatics">
         </div>
+        <!-- <nav class="header-nav">
+            <ul>
+                <li>
+                    <a class="blue" href="#" target="_blank" rel="noopener noreferrer">Book a Meeting</a>
+                </li>
+                <li>
+                    <a class="red" href="mailto:iain@cantech-informatics.com">Email Us</a>
+                </li>
+            </ul>
+        </nav> -->
     </header>
 
     <main>
@@ -196,7 +37,7 @@
                     <p>Strategic Software Solutions for a Complex World.</p>
                 </div>
             </div>
-            <a href="mailto:iain@cantech-informatics.com" class="contact-button">Get in Touch</a>
+            <a href="mailto:iain@cantech-informatics.com" class="contact-button red">Get in Touch</a>
         </div>
     </main>
 
@@ -213,73 +54,12 @@
         </div>
     </footer>
 
-    <script>
-        let keywords = [
-            "Compiler Engineering",
-            "Neural Network Accelerators",
-            "Architectural & Performance Modeling",
-            "CHERI (Capability Hardware Enhanced RISC Instructions)",
-            "Embedded Systems",
-            "Cybersecurity",
-            "High-Performance Computing",
-            "Mobile App Development",
-            "Web Solutions",
-        ];
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/iain-apreotesei/initial-business-call', text: 'Book a Call with Us', color: '#0069ff', textColor: '#ffffff' }); }</script>
+    <!-- Calendly badge widget end -->
 
-        const morphingTextDiv = document.getElementById('morphing-text');
-        let currentKeywordIndex = 0;
-        let layers = [];
-
-        function shuffleArray(array) {
-            for (var i = array.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-            return array;
-        }
-
-        function createLayers() {
-            shuffleArray(keywords).forEach((keyword, index) => {
-                const textLayer = document.createElement('div');
-                textLayer.classList.add('text-layer');
-                textLayer.textContent = keyword;
-                  if (index === 0) {
-                    textLayer.classList.add('active');
-                  }
-                morphingTextDiv.appendChild(textLayer);
-                layers.push(textLayer);
-            });
-        }
-
-        function morphText() {
-            const currentLayer = layers[currentKeywordIndex];
-            const nextKeywordIndex = (currentKeywordIndex + 1) % keywords.length;
-            const nextLayer = layers[nextKeywordIndex];
-
-            if (currentLayer) {
-                currentLayer.classList.add('previous');
-            }
-            currentLayer.classList.remove('active');
-            nextLayer.classList.add('active');
-
-            setTimeout(() => {
-                if(currentLayer) {
-                    currentLayer.classList.remove('previous');
-                }
-
-            }, 800);
-
-            currentKeywordIndex = nextKeywordIndex;
-        }
-
-
-        createLayers();
-        morphText();
-        setInterval(morphText, 3000);
-
-
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
