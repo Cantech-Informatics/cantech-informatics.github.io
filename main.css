@@ -1,0 +1,329 @@
+/* Common section styles */
+.section-container {
+    margin: 40px 0;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+.content-card {
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tagline Section */
+.tagline-section {
+    margin-top: 0;
+}
+
+.tagline-content {
+    text-align: center;
+    width: 100%;
+}
+
+.tagline-content h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+#morphing-text {
+    max-height: 20vh;
+    position: relative;
+    min-height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.text-layer {
+    font-size: 1.8em;
+    font-weight: bold;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+.text-layer.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    pointer-events: auto;
+}
+
+.text-layer.previous {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+#tagline-subtitle {
+    margin-top: 15px;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+/* Partnerships Section */
+.partnerships {
+    margin-top: 40px;
+}
+
+.partnership-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partnership-container h2, .tagline-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.partnership-item {
+    display: flex;
+    align-items: center;
+}
+
+.partnership-logo {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.partnership-text {
+    flex: 1;
+}
+
+.partnership-text h3 {
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.partnership-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.learn-more {
+    color: #0369d7;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.red {
+    background-color: #d90429;
+}
+.red:hover {
+    background-color: #b3031f;
+}
+
+.blue {
+    background-color: #0369d7;
+}
+
+.blue:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .partnership-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .partnership-logo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .text-layer {
+        font-size: 1.2em;
+    }
+
+    #morphing-text {
+        min-height: 2em;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .text-layer {
+        font-size: 1.5em;
+    }
+
+    #morphing-text {
+        min-height: 2.2em;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    font-size: 0.7em;
+    color: #777;
+    line-height: 1.4;
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-details p {
+    margin: 2px 0;
+}
+
+/* LinkedIn Link Styles */
+.linkedin-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0077b5;
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: color 0.3s ease;
+}
+
+.linkedin-link:hover {
+    color: #005180;
+    text-decoration: underline;
+}
+
+.linkedin-link img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.logo {
+    display: flex;
+    justify-content: left;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.header-nav {
+    display: none;
+}
+
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.header-nav a {
+    display: inline-block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .header-nav {
+        display: block;
+    }
+}
