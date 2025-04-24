@@ -1,0 +1,111 @@
+/* Additional custom styles beyond Tailwind CSS */
+
+/* Color variables for direct CSS access */
+:root {
+    --color-primary: #15b8c5;      /* Java */
+    --color-secondary: #8fdbe2;    /* Riptide */
+    --color-accent: #f9593c;       /* Sunset Orange */
+    --color-accent-light: #f4c2b8; /* Mandys Pink */
+    --color-accent-dark: #e84830;  /* Darker Sunset Orange */
+    --color-text-dark: #333333;    /* Dark text */
+    --color-text-light: #ffffff;   /* Light text */
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Typography adjustments */
+.prose h1, .prose h2, .prose h3 {
+    font-family: 'Playfair Display', serif;
+    color: #15b8c5; /* Java */
+}
+
+.prose h4, .prose h5, .prose h6 {
+    font-family: 'Playfair Display', serif;
+    color: #f9593c; /* Sunset Orange */
+}
+
+.prose p, .prose ul, .prose ol {
+    color: #333333; /* Dark text for good contrast */
+}
+
+/* Button styles */
+.btn {
+    @apply inline-block px-4 py-2 rounded transition duration-300;
+}
+
+.btn-primary {
+    @apply bg-primary text-white hover:bg-primary/80;
+}
+
+.btn-secondary {
+    @apply bg-accent text-white hover:bg-accent-dark;
+}
+
+.btn-outline {
+    @apply bg-transparent text-primary border border-primary hover:bg-secondary/20;
+}
+
+/* Card hover effects */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menu toggle for mobile navigation */
+[x-cloak] {
+    display: none;
+}
+
+/* Form input focus styles */
+input:focus, textarea:focus, select:focus {
+    @apply outline-none ring-2 ring-primary border-transparent;
+}
+
+/* Custom list styles */
+.custom-list {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.custom-list li::before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #15b8c5; /* Java color */
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 768px) {
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
