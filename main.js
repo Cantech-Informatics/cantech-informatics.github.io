@@ -1,13 +1,16 @@
 let keywords = [
     "Compiler Engineering",
-    "Neural Network Accelerators",
     "Architectural & Performance Modeling",
     "CHERI (Capability Hardware Enhanced RISC Instructions)",
     "Embedded Systems",
-    "Cybersecurity",
-    "High-Performance Computing",
-    "Mobile App Development",
-    "Web Solutions",
+    "Analog IC Layout",
+    "Analog Design",
+    "Design Design and Verification",
+    "Formal Verification",
+    "FPGA Fabric",
+    "SRAM Memory Design",
+    "Physical Design",
+    "Turnkey ASIC solutions"
 ];
 
 const morphingTextDiv = document.getElementById('morphing-text');
