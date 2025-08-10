@@ -1,15 +1,15 @@
 let keywords = [
     "Compiler Engineering",
-    "Architectural & Performance Modeling",
+    "Architectural & Performance Modelling",
     "CHERI (Capability Hardware Enhanced RISC Instructions)",
     "Embedded Systems",
     "Analog IC Layout",
     "Analog Design",
-    "Design Design and Verification",
+    "Digital Design and Verification",
     "Formal Verification",
     "FPGA Fabric",
     "SRAM Memory Design",
-    "Physical Design",
+    "Digital Physical Design",
     "Turnkey ASIC solutions"
 ];
 
