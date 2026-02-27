@@ -90,6 +90,71 @@ header {
     box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
 }
 
+/* Nav Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.nav-dropdown > a::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    margin-top: 2px;
+    transition: var(--transition);
+}
+
+.nav-dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: white;
+    min-width: 200px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 1001;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu li {
+    list-style: none;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--bg-light);
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
@@ -183,6 +248,35 @@ header {
     .header-nav a.highlight-btn {
         display: inline-block;
         padding: 0.8rem 1.5rem;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+        padding: 0.5rem 0 0 1rem;
+        min-width: auto;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+        transform: none;
+    }
+
+    .nav-dropdown-menu a {
+        padding: 0.4rem 0;
+        font-size: 1.1rem !important;
+    }
+
+    .nav-dropdown-menu a:hover {
+        background: transparent;
+    }
+
+    .nav-dropdown > a::after {
+        display: none;
     }
 }
 
@@ -357,6 +451,25 @@ header {
 
 .content-card li {
     margin-bottom: 0.5rem;
+}
+
+.service-card-btn {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.service-card-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
 }
 
 .section-title {
