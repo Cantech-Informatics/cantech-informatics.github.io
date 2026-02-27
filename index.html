@@ -3,72 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cantech Informatics &ndash; Strategic Software Solutions</title>
-    <meta name="description" content="Cantech Informatics - Strategic VLSI Solutions for a Complex World.">
-    <meta name="keywords" content="Cantech Informatics, Cantech Informatics SRL, CHERI Romania, compiler engineering, performance modeling">
+    <title>Cantech Informatics | Semiconductor & System Engineering Services</title>
+    <link rel="canonical" href="https://cantech-informatics.com/">
+    <meta name="description" content="Cantech Informatics provides end-to-end semiconductor engineering, VLSI design, SoC implementation, and secure embedded systems. Proud CHERI Alliance member specializing in AI chips and TinyML.">
+    <meta name="keywords" content="Cantech Informatics, Semiconductor Design, VLSI Engineering, SoC Implementation, Analog Front-Ends, RF Design, CHERI Alliance, Hardware Security, AI Chips, TinyML, Compiler Engineering">
     <meta name="author" content="Cantech Informatics">
     <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cantech-informatics.com/">
+    <meta property="og:title" content="Cantech Informatics | Semiconductor & System Engineering">
+    <meta property="og:description" content="End-to-end semiconductor engineering and secure systems design. Experts in VLSI, SoC, and AI hardware.">
+    <meta property="og:image" content="https://cantech-informatics.com/assets/cantech_informatics_logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cantech-informatics.com/">
+    <meta property="twitter:title" content="Cantech Informatics | Semiconductor & System Engineering">
+    <meta property="twitter:description" content="End-to-end semiconductor engineering and secure systems design. Experts in VLSI, SoC, and AI hardware.">
+    <meta property="twitter:image" content="https://cantech-informatics.com/assets/cantech_informatics_logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cantech Informatics",
+      "url": "https://cantech-informatics.com/",
+      "logo": "https://cantech-informatics.com/assets/cantech_informatics_logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/cantech-informatics/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@cantech-informatics.com",
+        "contactType": "technical support"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="/assets/ca_leaf.ico" type="image/x-icon">
+    <!-- Leaflet Map API -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <img src="/assets/cantech_informatics_logo.png" alt="Cantech Informatics">
+            <a href="/">
+                <img src="/assets/cantech_informatics_logo.png" alt="Cantech Informatics">
+            </a>
         </div>
-        <nav class="header-nav">
+        <nav class="header-nav" id="nav-menu">
             <ul>
-                <li>
-                    <a class="blue" href="articles.html">Articles</a>
-                </li>
-                <li>
-                    <a class="red" href="mailto:iain@cantech-informatics.com">Email Us</a>
-                </li>
+                <li><a href="/#featured-expertise">Expertise</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#portfolio">Projects</a></li>
+                <li><a href="/#events">Events</a></li>
+                <li><a href="/#location">Location</a></li>
+                <li><a href="/articles.html">Articles</a></li>
+                <li><a href="mailto:iain@cantech-informatics.com" class="highlight-btn">Get in Touch</a></li>
             </ul>
         </nav>
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <main>
-        <div class="section-container tagline-section">
-            <h2>Our Expertise</h2>
-            <div class="content-card">
-                <div class="tagline-content">
-                    <div id="morphing-text"></div>
-                    <div id="tagline-subtitle">
-                        <p>Strategic VLSI Solutions for a Complex World.</p>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="articles.html" class="contact-button blue">Read Our Articles</a>
-                        <a href="mailto:iain@cantech-informatics.com" class="contact-button red">Get in Touch</a>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="tagline-content">
+                <div id="morphing-text"></div>
+                <div id="tagline-subtitle">
+                    <p>Strategic Engineering Solutions for a Complex Silicon World.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#services" class="contact-button secondary">Explore Services</a>
+                    <a href="mailto:iain@cantech-informatics.com" class="contact-button primary">Get in Touch</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-container partnerships">
-            <div class="partnership-container">
-                <h2>Industry Leadership</h2>
-                <div class="content-card partnership-item">
-                    <a href="https://cheri-alliance.org/member/?e-filter-af77df4-member_type=full-member" target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/cheri-logo-larger.webp" alt="CHERI Alliance Logo" class="partnership-logo">
-                    </a>
-                    <div class="partnership-text">
-                        <h3>Proud Member of the CHERI Alliance</h3>
-                        <p>Cantech Informatics is a full member of the CHERI Alliance, collaborating with leading technology organizations to advance memory safety and security in computer systems through Capability Hardware Enhanced RISC Instructions (CHERI) technology.</p>
-                        <a href="https://cheri-alliance.org/member/?e-filter-af77df4-member_type=full-member" target="_blank" rel="noopener noreferrer" class="learn-more">Learn More →</a>
+        <!-- Main Expertise: Analog & Power Management -->
+        <section class="section-container" id="featured-expertise">
+            <h2 class="section-title">Core Areas of Expertise</h2>
+            <p class="section-subtitle">We specialize in high-precision analog design and robust power delivery systems across various process nodes (180nm to 22nm).</p>
+
+            <div class="expertise-highlight-card">
+                <div class="expertise-content">
+                    <div class="expertise-main">
+                        <span class="highlight-label">Main Specialization</span>
+                        <h3>Power Management (PMIC)</h3>
+                        <p>We design robust power delivery and monitoring systems featuring high efficiency and ultra-low noise.</p>
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <h4>Voltage & Current References</h4>
+                                <p>High-precision bandgap references and monitors.</p>
+                            </div>
+                            <div class="expertise-item">
+                                <h4>Regulators</h4>
+                                <p>Ultra-low power LDOs (I<sub>Q</sub> < 1uA), high-accuracy linear regulators, and switched-mode converters.</p>
+                            </div>
+                            <div class="expertise-item">
+                                <h4>Energy Harvesting</h4>
+                                <p>Maximum Power Point Tracking (MPTT) solutions for low-power actuators.</p>
+                            </div>
+                            <div class="expertise-item">
+                                <h4>Hybrid Control</h4>
+                                <p>Expertise in both analog and digitally-controlled regulation loops.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Specialized Engineering Services -->
+        <section class="section-container" id="services" style="background-color: var(--bg-light);">
+            <h2 class="section-title">Specialized Engineering Services</h2>
+            <p class="section-subtitle">Comprehensive solutions across the entire IC development lifecycle.</p>
+
+            <div class="services-grid">
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+                    <h3>Analog Front-Ends (AFE)</h3>
+                    <p>Capturing and conditioning signals from physical transducers with extreme precision.</p>
+                    <ul>
+                        <li>Low-Noise (LNA) & Transimpedance (TIA) Amplifiers</li>
+                        <li>High-precision Instrument Amplifiers</li>
+                        <li>Continuous-time filters & Programmable-gain stages</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></span>
+                    <h3>Frequency Synthesis & RF</h3>
+                    <p>High-frequency communication and precision clock generation up to 95 GHz.</p>
+                    <ul>
+                        <li>LC & Ring-based PLL Architectures</li>
+                        <li>Analog Basebands & Power Amplifiers (PA)</li>
+                        <li>High-speed RX/TX Serial Interfaces</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 15h3"/><path d="M1 9h3"/><path d="M1 15h3"/></svg></span>
+                    <h3>Digital Design & Verification</h3>
+                    <p>Architecture guidance to rigorous verification of complex SoCs.</p>
+                    <ul>
+                        <li>RTL Design (SystemVerilog/VHDL)</li>
+                        <li>UVM, Formal & PSS Verification</li>
+                        <li>Structural Check (Lint, CDC, RDC)</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>
+                    <h3>Software & Embedded Systems</h3>
+                    <p>Enabling high-performance computation through custom compiler toolchains and hardware-aware AI solutions.</p>
+                    <ul>
+                        <li>Compiler Engineering & AI Chips (Inference, TinyML)</li>
+                        <li>Architectural & Performance Modelling</li>
+                        <li>Pre- & Post- Silicon Software Development</li>
+                        <li>Embedded Programming (Bare-metal, RTOS, Linux)</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                    <h3>VLSI & SoC Implementation</h3>
+                    <p>Turnkey solutions from specification to silicon sign-off.</p>
+                    <ul>
+                        <li>Mixed-Signal & AMS Verification</li>
+                        <li>Functional Safety (ASIL-D, DO-254)</li>
+                        <li>Physical Implementation & EMIR Sign-off</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                    <h3>DFT & Design Automation</h3>
+                    <p>Ensuring silicon success through advanced testing and automated flows.</p>
+                    <ul>
+                        <li>Advanced Scan Insertion & IJTAG</li>
+                        <li>Static Analysis (Spyglass CDC/RDC/Power)</li>
+                        <li>Automation Scripts (Python, Tcl, SKILL)</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M9 20v-10M15 20v-2M12 4v4M18 4v7M6 4v11"/></svg></span>
+                    <h3>ATE & Production Test</h3>
+                    <p>High-efficiency test solutions for volume manufacturing and characterization.</p>
+                    <ul>
+                        <li>Advantest (93K, Exascale) & Teradyne (Flex)</li>
+                        <li>Test Software (C++, VBT) & Yield Optimization</li>
+                        <li>RF (Radar, NFC) & Automotive Analog Testing</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></span>
+                    <h3>High-Speed PCB & SI/PI</h3>
+                    <p>Robust hardware design for safety-critical and high-performance applications.</p>
+                    <ul>
+                        <li>Multilayer Layout (DDR, SerDes, RF Routing)</li>
+                        <li>Signal & Power Integrity (SI/PI) Simulation</li>
+                        <li>Automotive Standards (EMC, DFMEA, Magnetic)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Portfolio -->
+        <section class="section-container" id="portfolio">
+            <h2 class="section-title">Sample Project Portfolio</h2>
+            <p class="section-subtitle">Proven excellence across automotive, medical, and aerospace sectors.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h4>UWB Transceivers</h4>
+                    <p>Multiband frequency synthesizers and RX analog basebands in 90nm and 65nm CMOS.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h4>High-Performance LDOs</h4>
+                    <p>Fast transient response regulators stable across wide load ranges (0-1A) in 22nm/40nm.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h4>Automotive Sensing</h4>
+                    <p>Low-noise amplifiers and filters for Hall-effect sensors with strict accuracy requirements.</p>
+                </div>
+                <div class="portfolio-card">
+                    <h4>Medical Bio-Sensing</h4>
+                    <p>Ultra-low noise AFEs for ultrasound receivers and in-memory compute platforms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operational Model -->
+        <section class="section-container" id="operational-model" style="background-color: var(--bg-light);">
+            <h2 class="section-title">Operational Model</h2>
+            <p class="section-subtitle">Tailored engagement frameworks to suit your internal engineering department.</p>
+            <div class="model-grid">
+                <div class="model-item">
+                    <span class="model-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>Integrated Teams</h4>
+                    <p>Extension of your team following your design flows and standards (e.g., Jama).</p>
+                </div>
+                <div class="model-item">
+                    <span class="model-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+                    <h4>Full Ownership</h4>
+                    <p>Delivery of specific blocks or full subsystems from schematic to layout sign-off.</p>
+                </div>
+                <div class="model-item">
+                    <span class="model-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    <h4>Quality Sign-off</h4>
+                    <p>Rigorous internal technical leadership reviews for every deliverable.</p>
+                </div>
+                <div class="model-item">
+                    <span class="model-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h4>Flexible Support</h4>
+                    <p>Time & Materials (T&M) or fixed-scope delivery based on project complexity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Ecosystem -->
+        <section class="section-container" style="background-color: var(--bg-white); border-top: 1px solid rgba(0,0,0,0.05); padding: 4rem 5%;">
+            <div style="text-align: center; max-width: 1000px; margin: 0 auto;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 3rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Standard & Technical Ecosystem</h3>
+                <div class="ecosystem-logos" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; align-items: center; margin-bottom: 3rem;">
+                    <img src="/assets/Cadence_Logo_2019.png" alt="Cadence" style="height: 45px; filter: grayscale(1); opacity: 0.7; transition: var(--transition); mix-blend-mode: multiply;" onmouseover="this.style.filter='none'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)'; this.style.opacity='0.7'">
+                    <img src="/assets/1280px-Synopsys_Logo.svg.png" alt="Synopsys" style="height: 25px; filter: grayscale(1); opacity: 0.7; transition: var(--transition); mix-blend-mode: multiply;" onmouseover="this.style.filter='none'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)'; this.style.opacity='0.7'">
+                    <img src="/assets/Siemens_AG_logo.svg" alt="Siemens" style="height: 25px; filter: grayscale(1); opacity: 0.7; transition: var(--transition); mix-blend-mode: multiply;" onmouseover="this.style.filter='none'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)'; this.style.opacity='0.7'">
+                </div>
+                <div class="ecosystem-logos" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; align-items: center;">
+                    <img src="/assets/UVM-logo.png" alt="Universal Verification Methodology (UVM)" style="height: 50px; filter: grayscale(1); opacity: 0.7; transition: var(--transition); mix-blend-mode: multiply;" onmouseover="this.style.filter='none'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)'; this.style.opacity='0.7'">
+                    <img src="/assets/1280px-Accellera_logo.svg.png" alt="Accellera Systems Initiative" style="height: 40px; filter: grayscale(1); opacity: 0.7; transition: var(--transition); mix-blend-mode: multiply;" onmouseover="this.style.filter='none'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)'; this.style.opacity='0.7'">
+                    <img src="/assets/opentitan-logo.png" alt="OpenTitan" style="height: 45px; filter: grayscale(1); opacity: 0.7; transition: var(--transition); mix-blend-mode: multiply;" onmouseover="this.style.filter='none'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)'; this.style.opacity='0.7'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section class="section-container" id="events" style="background-color: var(--bg-white);">
+            <h2 class="section-title">Upcoming Events</h2>
+            <p class="section-subtitle">Meet us at these industry-leading conferences to discuss the latest in semiconductor technology and hardware security.</p>
+
+            <div class="events-grid">
+                <!-- Event 1: CHERI Blossoms -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="/assets/CHERIBlossoms2026Title-e1748872242417.png" alt="CHERI Blossoms Conference 2026">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">EXHIBITOR</span>
+                        <h3>CHERI Blossoms Conference 2026</h3>
+                        <p class="event-detail"><strong>Pre-Conference Tutorial:</strong> 25 March 2026</p>
+                        <p class="event-detail"><strong>Main Conference:</strong> 26 – 27 March 2026</p>
+                        <p class="event-detail"><strong>Location:</strong> University of Cambridge, UK</p>
+                    </div>
+                </div>
+
+                <!-- Event 2: Embedded World -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="/assets/b2bff573-6d12-f111-9cf8-9440c96c4261.jpeg" alt="Embedded World 2026">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">EXHIBITOR</span>
+                        <h3>Embedded World 2026</h3>
+                        <p class="event-detail"><strong>Connecting the embedded community:</strong> 10 – 12 March 2026</p>
+                        <p class="event-detail"><strong>Location:</strong> Nuremberg, Germany</p>
+                        <p class="event-detail"><em>Save the date!</em></p>
+                    </div>
+                </div>
+
+                <!-- Event 3: CHERITech'25 -->
+                <div class="event-card highlight-border">
+                    <div class="event-image">
+                        <img src="/assets/CHERITech_cantech.JPG" alt="CHERITech'25 Stand">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag secondary">EXHIBITOR</span>
+                        <h3>CHERITech'25 Conference</h3>
+                        <p class="event-detail"><strong>Date:</strong> 14 November 2025</p>
+                        <p class="event-detail"><strong>Time:</strong> 09:00 – 17:00 GMT</p>
+                        <p class="event-detail"><strong>Location:</strong> Sister, Manchester, UK</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="section-container" id="partners">
+            <h2 class="section-title">Trusted Partners</h2>
+            <p class="section-subtitle">Collaborating with industry leaders to deliver world-class semiconductor solutions.</p>
+            <div class="partners-grid">
+                <div class="partner-logo-item">
+                    <img src="/assets/cheri-logo-larger.webp" alt="CHERI Alliance">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="/assets/microedge.png" alt="MicroEdge">
+                </div>
+            </div>
+        </section>
+
+        <!-- Memberships & Associations -->
+        <section class="section-container" style="background-color: var(--bg-light); border-top: 1px solid rgba(0,0,0,0.05);">
+            <h2 class="section-title">Professional Affiliations</h2>
+            <p class="section-subtitle">Active members of leading professional organizations in the European economic region.</p>
+            <div class="partners-grid">
+                <div class="partner-logo-item">
+                    <img src="/assets/cropped-logo-principal-IMM.png" alt="Patronatul Întreprinderilor Mici si Mijlocii București Ilfov" style="height: 100px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic European Presence Section -->
+        <section class="section-container" id="location">
+            <div id="map-background"></div>
+            <div class="location-right-panel">
+                <div class="location-text-group">
+                    <h2 class="section-title">Strategic European Presence</h2>
+                    <p class="section-subtitle">Based at the heart of the European semiconductor corridor, Cantech Informatics leverages a 70-year regional legacy in computing and microelectronics.</p>
+                </div>
+                <div class="location-card dynamic-card">
+                    <span class="location-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+                    <h3>The European Advantage</h3>
+                    <p>Our strategic footprint enables seamless, nearshore collaboration with both European Blue Chip leaders and agile startups. By combining deep technical heritage with operational flexibility, we deliver world-class semiconductor solutions with the precision and reliability expected from a premier European engineering partner.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Reliability Section -->
+        <section class="section-container" id="values" style="background-color: var(--bg-white);">
+            <h2 class="section-title">Why Partner With Us?</h2>
+            <p class="section-subtitle">Building trust through technical excellence, operational stability, and shared European values.</p>
+
+            <div class="expertise-grid" style="max-width: 1100px; margin: 0 auto;">
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+                    <h3>Legal Rigor & NDAs</h3>
+                    <p>Operating within the EU means your IP is protected by the world's most stringent legal frameworks. We work directly on your secure infrastructure, ensuring full compliance with your internal safety standards.</p>
+                </div>
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+                    <h3>The European Advantage</h3>
+                    <p>Based in the EU semiconductor corridor, we offer time-zone alignment (GMT+2) and cultural proximity, eliminating the communication risks of far-shore outsourcing.</p>
+                </div>
+                <div class="content-card">
+                    <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h3>Transparent Partnership</h3>
+                    <p>We believe in "Open Book" collaboration: from transparent pricing models to direct expert access. The engineers who interview with you are the ones who do the work—guaranteeing no junior hand-offs, no hidden subcontracting, and no tactical surprises.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                 <p style="color: var(--text-muted); font-size: 1.1rem;">Beyond engineering, we are committed to the cultural heritage of our region.</p>
+                 <a href="/article-cultural-gala.html" style="color: var(--primary); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--primary); padding-bottom: 2px;">Read about our sponsorship of the Romanian Operetta Gala &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Final Conversion CTA -->
+        <section class="section-container" style="background-color: var(--bg-light); text-align: center; padding: 4rem 5%;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Ready to discuss your next project?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Our engineering team is ready to scale with your technical requirements. Schedule an initial consultation to explore how we can support your silicon roadmap.</p>
+            <a href="https://calendly.com/iain-apreotesei/initial-business-call" class="contact-button primary">Book a Technical Consultation</a>
+        </section>
+
+        <!-- Industry Leadership -->
+        <section class="section-container partnerships">
+            <h2 class="section-title">Industry Leadership</h2>
+            <div class="partnership-item">
+                <a href="https://cheri-alliance.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/cheri-logo-larger.webp" alt="CHERI Alliance Logo" class="partnership-logo">
+                </a>
+                <div class="partnership-text">
+                    <h3>Member of the CHERI Alliance</h3>
+                    <p>Cantech Informatics collaborates with leading technology organizations to advance hardware-defined security through CHERI technology integration.</p>
+                    <a href="https://cheri-alliance.org/" target="_blank" rel="noopener noreferrer" class="learn-more">Learn More <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership / Contact -->
+        <section class="section-container" id="leadership">
+            <div class="leadership-card small">
+                <div class="leadership-image">
+                    <img src="/assets/managing_director.png" alt="Iain Apreotesei">
+                </div>
+                <div class="leadership-info">
+                    <p class="role">Managing Director</p>
+                    <h2>Iain Apreotesei</h2>
+                    <p class="bio">Leading Cantech Informatics to deliver high-precision semiconductor engineering and innovative hardware-software co-design solutions. I am always available to discuss any custom requirements you may have.</p>
+                    <div class="leadership-cta-group">
+                        <a href="mailto:contact@cantech-informatics.com" class="email">contact@cantech-informatics.com</a>
+                        <a href="#" class="phone-secure" data-p1="40" data-p2="728" data-p3="144" data-p4="400"></a>
+                        <a href="https://www.linkedin.com/in/iain-adrian-a-695967163/" target="_blank" rel="noopener noreferrer" class="personal-linkedin">LinkedIn</a>
+                        <a href="https://calendly.com/iain-apreotesei/initial-business-call" class="contact-button primary small-cta">Schedule a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-details">
             <p>&copy; 2025 Cantech Informatics SRL. All rights reserved.</p>
-            <p>Company Name: CANTECH INFORMATICS SRL</p>
             <p>Fiscal Code: 17141829 | Registry No.: J2005001082406</p>
-            <p>EUID: ROONRC.J2005001082406 | Established: 2005</p>
+            <p>EUID: ROONRC.J2005001082406</p>
              <a href="https://www.linkedin.com/company/cantech-informatics/" class="linkedin-link">
                 <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
                 Follow us on LinkedIn
@@ -76,12 +465,12 @@
         </div>
     </footer>
 
-    <!-- Calendly badge widget begin -->
+    <!-- Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/iain-apreotesei/initial-business-call', text: 'Book a Call with Us', color: '#0069ff', textColor: '#ffffff' }); }</script>
-    <!-- Calendly badge widget end -->
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/iain-apreotesei/initial-business-call', text: 'Book a Call with Us', color: '#d90429', textColor: '#ffffff' }); }</script>
 
     <script src="main.js"></script>
 </body>
 </html>
+

@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles | Cantech Informatics</title>
-    <meta name="description" content="Technical articles and insights from Cantech Informatics">
-    <meta name="keywords" content="Cantech Informatics, technical articles, CHERI, compiler engineering, performance modeling">
+    <title>Technical Articles & Engineering Insights | Cantech Informatics</title>
+    <link rel="canonical" href="https://cantech-informatics.com/articles.html">
+    <meta name="description" content="Explore technical articles on semiconductor design, VLSI, SoC architecture, and hardware-software co-design from Cantech Informatics.">
+    <meta name="keywords" content="Semiconductor Blog, VLSI Insights, CHERI Technology, SoC Verification, Hardware Security Articles">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cantech-informatics.com/articles.html">
+    <meta property="og:title" content="Technical Articles & Engineering Insights | Cantech Informatics">
+    <meta property="og:description" content="Explore technical articles on semiconductor design, VLSI, and modern SoC architecture.">
+    <meta property="og:image" content="https://cantech-informatics.com/assets/cantech_informatics_logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Technical Articles & Engineering Insights">
+    <meta property="twitter:description" content="Explore technical insights on semiconductor design and VLSI.">
     <meta name="author" content="Cantech Informatics">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="main.css">
@@ -16,27 +29,48 @@
 
     <header>
         <div class="logo">
-            <a href="index.html">
+            <a href="/">
                 <img src="/assets/cantech_informatics_logo.png" alt="Cantech Informatics">
             </a>
         </div>
-        <nav class="header-nav">
+        <nav class="header-nav" id="nav-menu">
             <ul>
-                <li>
-                    <a class="blue" href="articles.html">Articles</a>
-                </li>
-                <li>
-                    <a class="red" href="mailto:iain@cantech-informatics.com">Email Us</a>
-                </li>
+                <li><a href="/#featured-expertise">Expertise</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#portfolio">Projects</a></li>
+                <li><a href="/#events">Events</a></li>
+                <li><a href="/#location">Location</a></li>
+                <li><a href="/articles.html">Articles</a></li>
+                <li><a href="mailto:iain@cantech-informatics.com" class="highlight-btn">Get in Touch</a></li>
             </ul>
         </nav>
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <main class="articles-container">
         <h1>Technical Articles</h1>
-        <p class="intro-text">Explore our collection of technical insights, research findings, and industry perspectives.</p>
+        <p class="intro-text">Explore our collection of technical insights, research findings, and industry perspectives on modern semiconductor engineering.</p>
 
         <div class="articles-grid">
+            <article class="article-card">
+                <div class="article-image">
+                    <a href="article-cultural-gala.html">
+                        <img src="/assets/skampa_03.jpg" alt="Cultural Sponsorship">
+                    </a>
+                </div>
+                <div class="article-content">
+                    <h2><a href="/article-cultural-gala.html">Bridging European Culture: The Romanian Operetta Gala</a></h2>
+                    <p class="article-meta">Published: January 20, 2026 | By Cantech Informatics</p>
+                    <p class="article-excerpt">Cantech Informatics proudly sponsors the Romanian Operetta Gala, strengthening cultural ties and artistic collaboration across Europe.</p>
+                    <a href="/article-cultural-gala.html" class="read-more">Read More</a>
+                </div>
+            </article>
+
             <article class="article-card">
                 <div class="article-image">
                     <img src="/assets/cheri-logo-larger.webp" alt="CHERI Architecture">
@@ -44,8 +78,8 @@
                 <div class="article-content">
                     <h2>Understanding CHERI: Capability Hardware Enhanced RISC Instructions</h2>
                     <p class="article-meta">Published: April 5, 2025 | By Cantech Informatics</p>
-                    <p class="article-excerpt">An in-depth exploration of CHERI architecture and how it revolutionizes memory safety in computing systems.</p>
-                    <a href="#" class="read-more blue">Available Soon</a>
+                    <p class="article-excerpt">An in-depth exploration of CHERI architecture and how it revolutionizes memory safety in computing systems through hardware-software co-design.</p>
+                    <a href="#" class="read-more">Available Soon</a>
                 </div>
             </article>
         </div>
@@ -53,10 +87,9 @@
 
     <footer>
         <div class="footer-details">
-            <p>&copy; 2023 Cantech Informatics SRL. All rights reserved.</p>
-            <p>Company Name: CANTECH INFORMATICS SRL</p>
+            <p>&copy; 2025 Cantech Informatics SRL. All rights reserved.</p>
             <p>Fiscal Code: 17141829 | Registry No.: J2005001082406</p>
-            <p>EUID: ROONRC.J2005001082406 | Established: 2005</p>
+            <p>EUID: ROONRC.J2005001082406</p>
              <a href="https://www.linkedin.com/company/cantech-informatics/" class="linkedin-link">
                 <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon">
                 Follow us on LinkedIn
@@ -64,10 +97,11 @@
         </div>
     </footer>
 
-    <!-- Calendly badge widget begin -->
+    <!-- Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/iain-apreotesei/initial-business-call', text: 'Book a Call with Us', color: '#0069ff', textColor: '#ffffff' }); }</script>
-    <!-- Calendly badge widget end -->
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/iain-apreotesei/initial-business-call', text: 'Book a Call with Us', color: '#d90429', textColor: '#ffffff' }); }</script>
+
+    <script src="main.js"></script>
 </body>
 </html>
