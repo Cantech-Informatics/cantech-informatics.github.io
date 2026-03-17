@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivo Minkov — Attorney at Law, Ruse, Bulgaria</title>
+    <style>
+        :root {
+            --ink: #2c2a25;
+            --muted: #6b6560;
+            --rule: #c8c0b4;
+            --bg: #faf8f5;
+            --cream: #f3f0eb;
+            --sand: #e8e2d9;
+            --burgundy: #5c1a2a;
+            --burgundy-deep: #3e1019;
+            --burgundy-light: #7a2e3f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { font-size: 17px; }
+
+        body {
+            font-family: "Georgia", "Times New Roman", serif;
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Top bar ── */
+        .topbar {
+            background: var(--burgundy-deep);
+            padding: 0.7rem 1.5rem;
+            text-align: center;
+        }
+
+        .topbar span {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ── Hero banner ── */
+        .hero {
+            background: var(--bg);
+            border-bottom: 3px solid var(--burgundy);
+            text-align: center;
+            padding: 3rem 1.5rem 2.5rem;
+        }
+
+        .hero img {
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 1.7rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 0.25rem;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Intro strip ── */
+        .intro {
+            background: var(--burgundy);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 1.3rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Main content ── */
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ── Section card ── */
+        .card {
+            background: var(--bg);
+            margin: 2rem 0;
+            border: 1px solid var(--sand);
+        }
+
+        .card-header {
+            background: var(--cream);
+            border-bottom: 1px solid var(--sand);
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card-header h2 {
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin: 0;
+        }
+
+        /* Shell spiral ornament in card headers */
+        .spiral {
+            width: 16px;
+            height: 16px;
+            opacity: 0.35;
+            flex-shrink: 0;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* ── Practice areas ── */
+        .practices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .practice {
+            padding-left: 0.9rem;
+            border-left: 2px solid var(--burgundy);
+        }
+
+        .practice dt {
+            font-weight: 600;
+            font-size: 0.92rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .practice dd {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* ── Contact grid ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .contact-grid .item span.label {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-grid .item {
+            font-size: 0.9rem;
+        }
+
+        .contact-grid a {
+            color: var(--burgundy-light);
+            text-decoration: none;
+        }
+
+        .contact-grid a:hover {
+            color: var(--burgundy-deep);
+            text-decoration: underline;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--burgundy-deep);
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            padding: 1.2rem 1.5rem;
+            font-size: 0.75rem;
+            line-height: 1.6;
+            margin-top: 2rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 560px) {
+            html { font-size: 16px; }
+            .hero { padding: 2rem 1.25rem 2rem; }
+            .hero img { max-width: 260px; }
+            .content { padding: 0 1rem; }
+            .practices { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .card-body { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <span>Member of the Ruse Bar Association</span>
+    </div>
+
+    <div class="hero">
+        <img src="palace.png" alt="Office building facade, Ruse, Bulgaria">
+        <h1>Ivo Minkov</h1>
+        <p>Attorney at Law &middot; Ruse, Bulgaria</p>
+    </div>
+
+    <div class="intro">
+        Providing professional legal counsel for international clients since 1992.
+    </div>
+
+    <div class="content">
+
+        <div class="card">
+            <div class="card-header">
+                <svg class="spiral" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 50 C50 38,60 28,72 28 C84 28,94 38,94 50 C94 68,80 82,62 82 C38 82,18 66,18 44 C18 18,38 2,66 2" stroke="#5c1a2a" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M50 50 C50 44,54 40,60 40 C66 40,70 44,70 50 C70 58,64 64,56 64 C44 64,34 56,34 46 C34 32,44 22,58 22" stroke="#5c1a2a" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <h2>Areas of Practice</h2>
+            </div>
+            <div class="card-body">
+                <dl class="practices">
+                    <div class="practice">
+                        <dt>Company Registration</dt>
+                        <dd>Incorporation of Bulgarian entities (OOD/EOOD) and Commercial Register filings.</dd>
+                    </div>
+                    <div class="practice">
+                        <dt>Real Estate &amp; Property</dt>
+                        <dd>Due diligence, drafting of Notary Deeds, and representation in property transactions.</dd>
+                    </div>
+                    <div class="practice">
+                        <dt>Immigration &amp; Residency</dt>
+                        <dd>Residency permits and documentation for foreign citizens.</dd>
+                    </div>
+                    <div class="practice">
+                        <dt>Legal Translations</dt>
+                        <dd>Certified translation and legalisation of documents between Bulgarian and English.</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <svg class="spiral" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 50 C50 38,60 28,72 28 C84 28,94 38,94 50 C94 68,80 82,62 82 C38 82,18 66,18 44 C18 18,38 2,66 2" stroke="#5c1a2a" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M50 50 C50 44,54 40,60 40 C66 40,70 44,70 50 C70 58,64 64,56 64 C44 64,34 56,34 46 C34 32,44 22,58 22" stroke="#5c1a2a" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <h2>Contact</h2>
+            </div>
+            <div class="card-body">
+                <div class="contact-grid">
+                    <div class="item">
+                        <span class="label">Address</span>
+                        ul. "Pirot" 5, Ruse 7000, Bulgaria
+                    </div>
+                    <div class="item">
+                        <span class="label">Telephone</span>
+                        <a href="tel:+35982834031">+359 82 834 031</a>
+                    </div>
+                    <div class="item">
+                        <span class="label">Email</span>
+                        <a href="mailto:minkov@lawyer.com">minkov@lawyer.com</a>
+                    </div>
+                    <div class="item">
+                        <span class="label">Office Hours</span>
+                        Monday – Friday, 09:00 – 18:00
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        This website provides general information only and does not constitute a formal attorney-client relationship.
+    </footer>
+
+</body>
+</html>
